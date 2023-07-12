@@ -10,15 +10,17 @@ let round = [];
 
 function Button(sound){
     this.sound = sound;
+    this.audio = new Audio(this.sound)
     this.play = function(){
-        let audio = new Audio(this.sound);
-        audio.play()
+        this.audio.play()
     }
 }
 
 function init(){
     $(document).keypress(startGame);
     $(document).click(startGame);
+
+    initButtons()
 }
 
 function initButtons(){
@@ -93,8 +95,8 @@ function getRandomColor(){
 
 function startGame(e){
     $(document).off();
-    initButtons()
-
+    round = []
     index = 0;
+
     round.push(getRandomColor())
 }

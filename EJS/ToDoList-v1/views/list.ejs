@@ -1,0 +1,27 @@
+<%- include("header") -%>
+
+<div class="box" id="heading">
+    <h1>
+        <%=title%>
+    </h1>
+</div>
+
+<div class="box">
+
+    <% for (action of actions){ %>
+        <div class="item">
+            <input type="checkbox">
+            <p>
+                <%=action%>
+            </p>
+        </div>
+        <%}; %>
+
+            <form class="item" action="/" method="post">
+                <input type="text" placeholder="Add action" name="action" autocomplete="off">
+                <button type="submit" name="list" value=<%=title%> >+</button>
+            </form>
+
+</div>
+
+<%- include("footer") -%>
